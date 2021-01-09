@@ -1,0 +1,47 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Exo 2', sans-serif;
+}
+body{
+  background-color: #1E2D3B;
+}
+header{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  min-height: 60px;
+  background-color: black;
+}
+#icona{
+  margin: 10px 320px;
+  height: 40px;
+  width: auto;
+}
+img{
+  width: 200px;
+  height: auto;
+}
+#app{
+  margin: 80px 170px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.disco{
+  margin: 10px 20px;
+  background-color: #2E3A46;
+  width: 220px;
+  height: 300px;
+  padding-top: 5px;
+  text-align: center;
+  color: white;
+}
+.disco h3{
+  margin-bottom: 5px;
+}
+.disco:hover{
+  transform: scale(1.1);
+}
