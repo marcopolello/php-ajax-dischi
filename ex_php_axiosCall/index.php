@@ -11,7 +11,7 @@
 
     <header>
 
-      <a href="http://localhost/php-axiosCall-dischi/"><img id="icona" src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Logoappliandrospotify.png" alt="spotify"></a>    
+      <a href="http://localhost/php-axiosCall-dischi/"><img id="icona" src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Logoappliandrospotify.png" alt="spotify"></a>
 
     </header>
 
@@ -19,7 +19,9 @@
 
       <div class="bottoni">
 
-        <button @click="update(song)" v-for="(song, index) in songs" type="button" name="button">{{song.author}}</button>
+        <button @click="clear">Clear</button>
+
+        <button @click="update(song.author)" v-for="(song, index) in songs" type="button" name="button">{{song.author}}</button>
 
       </div>
 

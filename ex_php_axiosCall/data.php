@@ -38,12 +38,10 @@
           'poster' => 'https://images-na.ssl-images-amazon.com/images/I/81MDAIdh78L._SY355_.jpg'
       ]
   ];
-  // array vuoto in cui andro a pushare info utili
-  $useful = [];
-  $author = $_GET['art'];
+
+  $author = strtolower($_GET['author']);
   //var_dump($author); die();
 
-  // var dati = response.data;
   // this.songs = [];
   // for (var i = 0; i < dati.length; i++) {
   //   var song = dati[i];
@@ -51,15 +49,18 @@
   //     this.songs.push(song);
   //   }
   // }
-  // for ($i=0; $i < count($database); $i++) {
-  //   $data = $database[$i];
-  //   // var_dump($data['author']); die();
-  //   if ($data['author'] == $author) {
-  //     $useful[] = $data;
-  //   }
-  // }
+  if (!$author) {
+    echo json_encode($database);
+  } else{
+    $useful = [];
+    for ($i=0; $i < count($database); $i++) {
+      $disco = $database[$i];
+      if (strtolower($disco['author']) == $author) {
+        $useful[] = $disco;
+      }
+    }
+    echo json_encode($useful);
+  }
 
 
-  echo json_encode($database);
-  //echo json_encode($useful);
 ?>

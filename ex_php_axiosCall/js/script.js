@@ -1,36 +1,34 @@
-var app = new Vue ({
+new Vue ({
   el: '#app',
   data: {
     songs: [],
   },
   methods: {
-    update: function(obj) {
-      //console.log(obj.author);
+    update: function(author) {
+      //console.log(author);
       axios
         .get('data.php', {
-          // params: {
-          //   "author": "Bon Jovi"
-          // }
+          params: {
+            "author": author
+          }
         })
         .then(response => {
-          var dati = response.data;
-          this.songs = [];
-          for (var i = 0; i < dati.length; i++) {
-            var song = dati[i];
-            if (song.author == obj.author) {
-              this.songs.push(song);
-            }
-          }
-          //this.songs = response.data;
+          // var dati = response.data;
+          // this.songs = [];
+          // for (var i = 0; i < dati.length; i++) {
+          //   var song = dati[i];
+          //   if (song.author == obj.author) {
+          //     this.songs.push(song);
+          //   }
+          // }
+          this.songs = response.data;
         });
     },
+    clear: function () {
+      this.update('');
+    }
   },
   mounted: function () {
-    //console.log(index);
-    axios
-      .get('data.php', {})
-      .then(response => {
-        this.songs = response.data;
-      });
+    this.clear();
   },
 })
